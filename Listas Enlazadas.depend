@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1423753043 source:c:\users\javier\documents\practica algoritmos\listas enlazadas\main.c
+	<stdio.h>
+	"Listas.h"
+
+1423752510 c:\users\javier\documents\practica algoritmos\listas enlazadas\listas.h
+
+1423752868 source:c:\users\javier\documents\practica algoritmos\listas enlazadas\listas.c
+	<stdio.h>
+	<stdlib.h>
+	"Listas.h"
+
