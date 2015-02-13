@@ -18,7 +18,10 @@ void insertar(Lista *l, int elem, int pos) //inserta un elemento a la lista en l
     Nodo *nuevo, *anterior, *siguiente;
     int i;
 
-    nuevo = (Nodo *) malloc(sizeof(Nodo)); //Inicializa un nodo
+    if((nuevo = (Nodo *) malloc(sizeof(Nodo))) == NULL)
+    {
+        printf("Error: malloc termino inesperadamente"); // malloc retorno NULL
+    }//Inicializa un nodo
 
     nuevo->elemento = elem;
 
@@ -82,10 +85,10 @@ void eliminar(Lista *l, int pos) //elimina un elemento de la lista en la posicio
 int consultar(Lista l, int pos) //consulta el valor del elemento en una posicion de la lista
 {
     Nodo *actual;
-    int i;
+    int i, salida;
     if(pos < 1 || pos > l.longitud + 1)
     {
-         printf("Error: se inteto consultar un elemento de la lista en una posicion invalida");
+         salida = -1;
     }else
     {
         if(pos == 1)
@@ -94,13 +97,14 @@ int consultar(Lista l, int pos) //consulta el valor del elemento en una posicion
         }else
         {
             actual = l.primero;
-            for(i = 2; i < pos; i++)
+            for(i = 2; i <= pos; i++)
             {
                 actual = actual->siguiente;
             }
         }
-        return(actual->elemento);
+        salida = (actual->elemento);
     }
+    return(salida);
 }
 
 int longitud(Lista l) //retorna la longitud de la lista
