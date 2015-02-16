@@ -16,5 +16,14 @@ int main()
         printf("%d ",consultar(lista, i));
         i++;
     }
+    printf("\n");
+    printf("introducir la posicion del  elemento a eliminar:\n");
+    scanf("%d", &i);
+    eliminar(&lista, i);
+    Nodo *indice;
+    indice = lista.primero;
+    imprimirLista(lista);
+    destruir(&lista);
+    imprimirLista(lista);
     return(0);
 }

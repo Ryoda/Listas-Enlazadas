@@ -68,7 +68,7 @@ void eliminar(Lista *l, int pos) //elimina un elemento de la lista en la posicio
         {
             actual = l->primero;
             siguiente = actual->siguiente;
-            for(i = 2; i < pos; i++)
+            for(i = 2; i <= pos; i++)
             {
                 anterior = actual;
                 actual = siguiente;
@@ -124,4 +124,24 @@ void destruir(Lista *l) // destruye la lista, liberando todo el espacio reservad
         free(actual);
         actual = l->primero;
     }
+}
+
+
+void imprimirLista(Lista l) // imprime en pantalla los elementos de la lista
+{
+    Nodo *indice;
+    indice = l.primero;
+    if(indice == NULL)
+    {
+       printf("La lista a imprimir esta vacia \n");
+    }else
+    {
+        while(indice != NULL)
+        {
+            printf("%d ", indice->elemento);
+            indice = indice->siguiente;
+        }
+        printf("\n");
+    }
+
 }

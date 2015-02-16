@@ -20,5 +20,6 @@ void eliminar(Lista *l, int pos); //elimina un elemento en la posicion de la lis
 int consultar(Lista l, int pos); // consulta un elemento en la posicion de la lista
 int longitud(Lista l); // retorna la longitud de la lista
 void destruir(Lista *l); // destruye la lista, liberando todo el espacio reservado para los nodos
+void imprimirLista(Lista l);
 
 #endif // LISTAS_H_INCLUDED
